@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
   validates :profile_name, presence: true, 
   							uniqueness: true,
   							format: {
-  								with: /^([a-zA-Z0-9_-])+$/,
-  								message: 'Must be formatted correctly.',
+  								#with: /^([a-zA-Z0-9_-])+$/, #BROKEN!
+                  with: /\A[a-zA-Z0-9_\-]+\z/,
+  								message: 'Must be formatted correctly.'
   							}
 
   has_many :statuses
