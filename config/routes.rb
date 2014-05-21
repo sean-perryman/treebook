@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   root to: 'statuses#index'
 
+  get '/:id', to: 'profiles#show' #pass in the variable that we want to go to the params hash
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

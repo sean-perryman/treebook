@@ -3,3 +3,9 @@ sean:
   last_name: 'perryman'
   email: 'se@nperryman.com'
   profile_name: 'seanperryman'
+
+pimpy:
+  first_name: 'pimpy'
+  last_name: 'pimperson'
+  email: 'pimpy@testserver.com'
+  profile_name: 'pimpypimperson'
