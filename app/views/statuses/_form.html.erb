@@ -11,7 +11,6 @@
     </div>
   <% end %>
 
-  <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id.to_i } %><br />
   <%= f.input :content, label: "Update your status!" %><br />  
   <div class="form-actions">
     <%= f.button :submit %>
