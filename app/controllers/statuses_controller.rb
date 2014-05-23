@@ -41,6 +41,7 @@ class StatusesController < ApplicationController
   # PATCH/PUT /statuses/1
   # PATCH/PUT /statuses/1.json
   def update
+    @status = current_user.statuses.find(params[:id])
     params[:status].delete(:user_id) if params[:status].has_key?(:user_id)
 
     respond_to do |format|
@@ -57,7 +58,6 @@ class StatusesController < ApplicationController
   # DELETE /statuses/1
   # DELETE /statuses/1.json
   def destroy
-    params[:status].delete(:user_id) if params[:status].has_key?(:user_id)
     @status.destroy
     respond_to do |format|
       format.html { redirect_to statuses_url, notice: 'Status was successfully destroyed.' }
@@ -68,12 +68,12 @@ class StatusesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_status
-      @status = current_user.statuses.find(params[:id])
-
+      #@status = current_user.statuses.find(params[:id])
+      @status = Status.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def status_params
-      params.require(:status).permit(:user_id, :content, :first_name, :last_name, :user)
+    def status_params #switched from params.require to params.permit
+      params.require(:status).permit(:user_id, :content)  #, :first_name, :last_name, :user) #Pulled out per forum/join-table-woes
     end
 end
