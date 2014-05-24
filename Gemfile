@@ -12,6 +12,9 @@ group :production do
 	gem 'pg'
 end
 
+#New Relic Test
+gem 'newrelic_rpm'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
