@@ -1,11 +1,3 @@
-#1) Error:
-#StatusesControllerTest#test_should_not_update_status_if_nothing_has_changed:
-#ActionController::ParameterMissing: param is missing or the value is empty: status
-#    app/controllers/statuses_controller.rb:80:in `status_params'
-#    app/controllers/statuses_controller.rb:51:in `block in update'
-#    app/controllers/statuses_controller.rb:50:in `update'
-#    test/controllers/statuses_controller_test.rb:83:in `block in <class:StatusesControllerTest>'
-
 class StatusesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit]
   before_action :set_status, only: [:show, :edit, :update, :destroy]
@@ -54,10 +46,6 @@ class StatusesController < ApplicationController
     if params[:status] && params[:status].has_key?(:user_id)
       params[:status].delete(:user_id)
     end
-
-    puts "-----Status-----"
-    puts @status
-    puts "----------------"
 
     respond_to do |format|
       if @status.update(status_params)

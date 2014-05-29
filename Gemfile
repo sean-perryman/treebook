@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 
+# Use shoulda gem for the test group
+group :test do
+	gem 'shoulda'
+end
+
 # Use sqlite3 as the database for Active Record on development/test
 group :development, :test do
 	gem 'sqlite3'

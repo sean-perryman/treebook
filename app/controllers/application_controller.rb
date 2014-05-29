@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def user_params
-    params.require(:user).permit(:user_id, :first_name, :last_name, :email, :password, :password_confirmation, ß:user)
+    params.require(:user).permit(:user_id, :first_name, :last_name, :email, :password, :password_confirmation, :user, :friend)
   end
 
   def configure_permitted_parameters
