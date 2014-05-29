@@ -80,7 +80,8 @@ class StatusesControllerTest < ActionController::TestCase
 
   test "should not update status if nothing has changed" do
     sign_in users(:sean)
-    patch :update, id: @status
+    #patch :update,  id: @status
+    patch :update, {id: @status.id, status: {user_id: @status.user_id, content: 'MyText'}}
     assert_redirected_to status_path(assigns(:status))
     assert_equal assigns(:status).user_id, users(:sean).id
   end
