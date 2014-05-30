@@ -13,8 +13,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # User "strong params"; replacement for attr_accessible
   def user_params
-    params.require(:user).permit(:user_id, :first_name, :last_name, :email, :password, :password_confirmation, :user, :friend)
+    params.require(:user).permit(:user_id, :first_name, :last_name, :email, :password, :password_confirmation, :user, :friend, :friend_id)
   end
 
   def configure_permitted_parameters

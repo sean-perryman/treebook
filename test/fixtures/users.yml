@@ -9,3 +9,9 @@ pimpy:
   last_name: 'pimperson'
   email: 'pimpy@testserver.com'
   profile_name: 'pimpypimperson'
+
+pimpy2:
+  first_name: 'pimpy2'
+  last_name: 'pimperson'
+  email: 'pimpy2@testserver.com'
+  profile_name: 'pimpypimperson2'
