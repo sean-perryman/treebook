@@ -64,4 +64,8 @@ class UserTest < ActiveSupport::TestCase
 
     assert users(:sean).friends.include?(users(:pimpy2))
   end
+
+  test "that calling to_param on a user shows the profile name" do
+    assert_equal "seanperryman", users(:sean).to_param
+  end
 end

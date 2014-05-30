@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
     #return gravatar url
     "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase.strip)}"
   end
+
+  def to_param
+    profile_name
+  end
 end
